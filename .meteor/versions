@@ -76,7 +76,7 @@ sha@1.0.2
 spacebars@1.0.5
 spacebars-compiler@1.0.4
 srp@1.0.2
-tap:i18n@1.4.0
+tap:i18n@1.4.1
 tap:i18n-db@0.4.0
 tap:i18n-ui@0.5.0
 templating@1.0.11

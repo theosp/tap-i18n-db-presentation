@@ -1,7 +1,13 @@
 Router.route '/', ->
-  @wait TAPi18n.subscribe 'slides', this.params._id
+  @wait TAPi18n.subscribe 'slides', this.params._id, ->
+    setTimeout ->
+      Reveal.initialize()
+    , 200
 
-  @render 'slides'
+  if @ready()
+    @render 'slides'
+  else
+    @render 'loading'
 
 Router.route '/login', ->
   @render 'login'
@@ -15,11 +21,6 @@ if Meteor.isClient
   Template.slides.helpers
     slides: ->
       Slides.find({}, {sort: {order: 1}}).fetch()
-
-  Template.slides.rendered = ->
-    setTimeout ->
-      Reveal.initialize()
-    , 200
 
 if Meteor.isServer
   reset_slides = ->
