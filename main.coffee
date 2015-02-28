@@ -1,5 +1,5 @@
 Router.route '/', ->
-  @wait Meteor.subscribe 'slides', this.params._id
+  @wait TAPi18n.subscribe 'slides', this.params._id
 
   @render 'slides'
 
@@ -40,4 +40,4 @@ if Meteor.isServer
   Meteor.methods
     reset: -> reset_slides()
 
-  Meteor.publish 'slides', -> Slides.find({})
+  TAPi18n.publish 'slides', -> Slides.i18nFind({})

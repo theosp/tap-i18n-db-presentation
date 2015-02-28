@@ -16,3 +16,6 @@ accounts-password
 twbs:bootstrap
 fortawesome:fontawesome
 accounts-ui
+tap:i18n
+tap:i18n-db
+tap:i18n-ui
