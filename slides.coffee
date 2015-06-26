@@ -4,6 +4,7 @@
   '<img src="/img/wikipedia.png">'
   '<img src="/img/wikipedia-fr.png">'
   '<h2 style="text-transform: none">Extends the tap:i18n package</h2><video width="320" height="240" style="margin-right: 50px;" controls><source src="/vid/tap-i18n-demo-p1.ogv" type="video/ogg"></video><video width="320" height="240" controls><source src="/vid/tap-i18n-demo-p2.ogv" type="video/ogg"></video>'
+  '<img src="/img/atmo.png">'
   '<h2 style="text-transform: none">tap:i18n i18n ui</h2><img src="/img/wikipedia-ui.png">'
   '<h2 style="text-transform: none">tap:i18n-db i18n the content</h2><img src="/img/wikipedia-content.png">'
 
