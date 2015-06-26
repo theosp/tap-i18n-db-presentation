@@ -1,9 +1,4 @@
 Router.route '/', ->
-  @wait Meteor.subscribe 'slides', this.params._id, ->
-    setTimeout ->
-      Reveal.initialize()
-    , 200
-
   if @ready()
     @render 'slides'
   else
@@ -18,8 +13,11 @@ Router.route '/reset', ->
     self.redirect('/')
 
 Router.before ->
-  if window.location.pathname.indexOf("admin") > -1
-    Meteor.subscribe 'slides'
+  if window.location.pathname == "/"
+    setTimeout ->
+      Reveal.initialize()
+    , 200
+
     @next()
   else
     @next()
@@ -29,6 +27,8 @@ Router.after ->
     $("body").css({overflow: "auto"})
 
 if Meteor.isClient
+  Meteor.subscribe 'slides'
+
   Template.slides.helpers
     slides: ->
       Slides.find({}, {sort: {order: 1}}).fetch()
