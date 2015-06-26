@@ -17,6 +17,17 @@ Router.route '/reset', ->
   Meteor.call 'reset', ->
     self.redirect('/')
 
+Router.before ->
+  if window.location.pathname.indexOf("admin") > -1
+    Meteor.subscribe 'slides'
+    @next()
+  else
+    @next()
+
+Router.after ->
+  if window.location.pathname.indexOf("admin") > -1
+    $("body").css({overflow: "auto"})
+
 if Meteor.isClient
   Template.slides.helpers
     slides: ->

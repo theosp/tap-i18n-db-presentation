@@ -15,7 +15,6 @@ Slides.attachSchema SlidesSchema
 @AdminConfig =
   collections:
     Slides:
-      fields: ["_id", "order", "content"]
       tableColumns: [
         {label: 'Content', name: 'content'}
       ]
