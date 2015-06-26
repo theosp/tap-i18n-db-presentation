@@ -16,7 +16,7 @@ Router.before ->
   if window.location.pathname == "/"
     setTimeout ->
       Reveal.initialize()
-    , 200
+    , 1000
 
     @next()
   else
